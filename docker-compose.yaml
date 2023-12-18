@@ -1,0 +1,25 @@
+version: '3'
+
+services:
+  app:
+    build:
+      context: .
+    container_name: weather-api
+    depends_on:
+      - db
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:postgresql://db:5432/weatherdb
+      - SPRING_DATASOURCE_USERNAME=postgres
+      - SPRING_DATASOURCE_PASSWORD=0155
+    ports:
+      - '8081:8081'
+
+  db:
+    image: postgres:15.1-alpine
+    container_name: postgres
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=0155
+      - POSTGRES_DB=weatherdb
+    volumes:
+      - ./src/main/resources/db-init:/docker-entrypoint-initdb.d

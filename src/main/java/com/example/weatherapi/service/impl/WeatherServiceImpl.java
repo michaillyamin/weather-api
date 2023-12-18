@@ -57,9 +57,9 @@ public class WeatherServiceImpl implements WeatherService {
     }
 
     private Date parseDate(String date) {
-        SimpleDateFormat oldDateFormat = new SimpleDateFormat("dd-MM-yyyy");
+        SimpleDateFormat dateFormat = new SimpleDateFormat("dd-MM-yyyy");
         try {
-            return oldDateFormat.parse(date);
+            return dateFormat.parse(date);
         } catch (ParseException e) {
             throw new CustomDateParsingException("Failed to parse the date: " + date);
         }

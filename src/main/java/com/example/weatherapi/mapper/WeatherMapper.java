@@ -17,11 +17,11 @@ public interface WeatherMapper {
     @Mapping(target = "weatherData.location", source = "location")
     Weather weatherRequestToWeather(WeatherRequest weatherRequest);
 
-    @Mapping(target = "air_temperature", source = "airTemperature")
-    @Mapping(target = "wind_speed", source = "windSpeed")
-    @Mapping(target = "atmosphere_pressure", source = "atmospherePressure")
+    @Mapping(target = "airTemperature", source = "airTemperature")
+    @Mapping(target = "windSpeed", source = "windSpeed")
+    @Mapping(target = "atmospherePressure", source = "atmospherePressure")
     @Mapping(target = "humidity", source = "humidity")
-    @Mapping(target = "weather_condition", qualifiedByName = "mapWeatherCondition", source = "weatherCondition")
+    @Mapping(target = "weatherCondition", qualifiedByName = "mapWeatherCondition", source = "weatherCondition")
     @Mapping(target = "location", qualifiedByName = "mapLocation", source = "location")
     WeatherResponse weatherDataToWeatherResponse(WeatherData weatherData);
 

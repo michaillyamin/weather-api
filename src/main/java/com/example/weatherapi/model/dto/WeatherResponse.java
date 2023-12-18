@@ -1,11 +1,26 @@
 package com.example.weatherapi.model.dto;
 
+import com.fasterxml.jackson.annotation.JsonProperty;
+import jakarta.persistence.JoinColumn;
+
 public record WeatherResponse (
-        String air_temperature,
-        String wind_speed,
-        String atmosphere_pressure,
+
+        @JsonProperty("air_temperature")
+        String airTemperature,
+
+        @JsonProperty("wind_speed")
+        String windSpeed,
+
+        @JsonProperty("atmosphere_pressure")
+        String atmospherePressure,
+
+        @JsonProperty("humidity")
         String humidity,
-        String weather_condition,
+
+        @JsonProperty("weather_condition")
+        String weatherCondition,
+
+        @JsonProperty("location")
         String location
 ) {
 }

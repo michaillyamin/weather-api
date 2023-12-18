@@ -96,10 +96,10 @@ public class WeatherServiceTest {
         double expectedAverageAtmospherePressure = 1024D;
         double expectedAverageHumidity = 90;
 
-        assertEquals(String.format("%.2f", expectedAverageTemperature), weatherResponse.average_temperature());
-        assertEquals(String.format("%.2f", expectedAverageWindSpeed), weatherResponse.average_wind_speed());
-        assertEquals(String.format("%.2f", expectedAverageAtmospherePressure), weatherResponse.average_atmosphere_pressure());
-        assertEquals(String.format("%.2f", expectedAverageHumidity), weatherResponse.average_humidity());
+        assertEquals(String.format("%.2f", expectedAverageTemperature), weatherResponse.averageTemperature());
+        assertEquals(String.format("%.2f", expectedAverageWindSpeed), weatherResponse.averageWindSpeed());
+        assertEquals(String.format("%.2f", expectedAverageAtmospherePressure), weatherResponse.averageAtmospherePressure());
+        assertEquals(String.format("%.2f", expectedAverageHumidity), weatherResponse.averageHumidity());
     }
 
 }

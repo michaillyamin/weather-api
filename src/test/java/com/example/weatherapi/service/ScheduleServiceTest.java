@@ -51,7 +51,7 @@ public class ScheduleServiceTest {
         Location location = new Location(1L, "Minsk");
         WeatherData weatherData = new WeatherData(1L, 1D, new Date(1702752301000L), 9.4, 1024D, 100, new WeatherCondition(1L, "Clear"), location);
 
-        WeatherRequest weatherRequest = new WeatherRequest(weatherData, new Location(1L, "Minsk"));
+        WeatherRequest weatherRequest = new WeatherRequest(weatherData, location);
         Weather weather = new Weather(1L, weatherData);
 
         Map<String, String> headers = new HashMap<>();
